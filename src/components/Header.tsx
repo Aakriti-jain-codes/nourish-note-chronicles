@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Recipes", to: "/recipes" },
   { label: "Blog", to: "/blog" },
   { label: "About", to: "/about" },
+  { label: "Settings", to: "/settings" },
 ];
 
 const Header = () => {
