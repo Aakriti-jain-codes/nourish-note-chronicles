@@ -1,7 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import ArticleCard from "@/components/ArticleCard";
 import NutritionFactsBox from "@/components/NutritionFactsBox";
+import ScrollReveal from "@/components/ScrollReveal";
 import { posts } from "@/data/posts";
 import { foodImages } from "@/data/images";
 
@@ -13,6 +15,7 @@ const BlogPost = () => {
   if (!post) {
     return (
       <Layout>
+        <SEO title="Post Not Found" path={`/blog/${slug}`} />
         <div className="container py-24 text-center">
           <h1 className="font-display text-3xl font-bold mb-4">Post Not Found</h1>
           <Link to="/blog" className="text-primary hover:underline">← Back to Blog</Link>
@@ -23,6 +26,7 @@ const BlogPost = () => {
 
   return (
     <Layout>
+      <SEO title={post.title} description={post.excerpt} path={`/blog/${post.slug}`} />
       <div className="relative h-[50vh] min-h-[400px] flex items-end">
         <img src={foodImages[post.imageIdx]} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
@@ -48,29 +52,35 @@ const BlogPost = () => {
 
         <div className="prose-lg space-y-6">
           {post.content.map((p, i) => (
-            <div key={i}>
+            <ScrollReveal key={i}>
               <p className="text-foreground/85 leading-relaxed">{p}</p>
               {i === 1 && post.pullQuote && (
                 <blockquote className="my-8 pl-6 border-l-4 border-primary italic text-xl font-display text-foreground/70 leading-relaxed">
                   "{post.pullQuote}"
                 </blockquote>
               )}
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {post.nutrition && (
-          <div className="mt-12 pt-8 border-t">
-            <h2 className="font-display text-2xl font-bold mb-6">Nutrition Breakdown</h2>
-            <NutritionFactsBox data={post.nutrition} />
-          </div>
+          <ScrollReveal>
+            <div className="mt-12 pt-8 border-t">
+              <h2 className="font-display text-2xl font-bold mb-6">Nutrition Breakdown</h2>
+              <NutritionFactsBox data={post.nutrition} />
+            </div>
+          </ScrollReveal>
         )}
       </article>
 
       <section className="container py-12 border-t">
         <h2 className="font-display text-2xl font-bold mb-8">Related Articles</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {related.map((p) => <ArticleCard key={p.id} post={p} />)}
+          {related.map((p, i) => (
+            <ScrollReveal key={p.id} delay={i * 100}>
+              <ArticleCard post={p} />
+            </ScrollReveal>
+          ))}
         </div>
       </section>
     </Layout>

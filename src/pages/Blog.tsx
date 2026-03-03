@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import ArticleCard from "@/components/ArticleCard";
+import ScrollReveal from "@/components/ScrollReveal";
 import { posts, categories } from "@/data/posts";
 import { foodImages } from "@/data/images";
 import { Leaf } from "lucide-react";
@@ -9,15 +11,30 @@ import { Leaf } from "lucide-react";
 const Blog = () => {
   const [searchParams] = useSearchParams();
   const initialCat = searchParams.get("category") || "All";
+  const searchQuery = searchParams.get("q") || "";
   const [active, setActive] = useState(initialCat);
+  const [localQuery, setLocalQuery] = useState(searchQuery);
 
-  const filtered = active === "All" ? posts : posts.filter((p) => p.category === active);
+  const filtered = posts.filter((p) => {
+    const matchesCat = active === "All" || p.category === active;
+    const q = localQuery.toLowerCase();
+    const matchesSearch = !q || p.title.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q);
+    return matchesCat && matchesSearch;
+  });
 
   return (
     <Layout>
+      <SEO title="Blog" description="Explore nutrition tips, healthy recipes, and wellness articles." path="/blog" />
       <section className="container py-12">
         <h1 className="font-display text-4xl font-bold text-foreground mb-2">Blog</h1>
         <p className="text-muted-foreground mb-8">Explore our latest articles on nutrition and wellness</p>
+
+        <input
+          value={localQuery}
+          onChange={(e) => setLocalQuery(e.target.value)}
+          placeholder="Search articles by keyword..."
+          className="w-full max-w-md px-4 py-2.5 mb-6 text-sm rounded-full bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-primary/40"
+        />
 
         <div className="flex gap-2 flex-wrap mb-10">
           {categories.map((cat) => (
@@ -38,9 +55,13 @@ const Blog = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
             {filtered.length > 0 ? (
-              filtered.map((post) => <ArticleCard key={post.id} post={post} />)
+              filtered.map((post, i) => (
+                <ScrollReveal key={post.id} delay={i * 80}>
+                  <ArticleCard post={post} />
+                </ScrollReveal>
+              ))
             ) : (
-              <p className="text-muted-foreground col-span-2 text-center py-12">No articles in this category yet.</p>
+              <p className="text-muted-foreground col-span-2 text-center py-12">No articles found.</p>
             )}
           </div>
 

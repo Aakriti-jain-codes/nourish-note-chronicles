@@ -129,6 +129,107 @@ export const posts: Post[] = [
     author: { name: "Chef Marco Rivera", role: "Recipe Developer" },
     imageIdx: 0,
   },
+  {
+    id: "6",
+    slug: "omega-3-fatty-acids-explained",
+    title: "Omega-3 Fatty Acids: Why Your Brain Needs Them",
+    category: "Nutrition Facts",
+    excerpt:
+      "Omega-3s are essential fats your body can't produce on its own. Learn why they matter and how to get enough from food.",
+    content: [
+      "Omega-3 fatty acids are among the most studied nutrients in modern science, and for good reason. These essential fats play a critical role in brain function, heart health, and inflammation regulation. Yet most people don't consume nearly enough of them.",
+      "There are three main types of omega-3s: ALA (found in flaxseeds, chia seeds, and walnuts), EPA, and DHA (found primarily in fatty fish like salmon, mackerel, and sardines). While ALA is important, EPA and DHA are the forms your body uses most efficiently — particularly for brain and cardiovascular health.",
+      "DHA alone makes up about 40% of the polyunsaturated fatty acids in your brain. Studies have linked adequate omega-3 intake to reduced risk of depression, improved cognitive function in aging adults, and lower levels of chronic inflammation throughout the body.",
+      "If you don't eat fish regularly, consider algae-based omega-3 supplements — they provide DHA and EPA without the environmental concerns of fish oil. Aim for at least two servings of fatty fish per week, or 250-500 mg combined EPA and DHA daily from supplements.",
+    ],
+    pullQuote:
+      "DHA makes up about 40% of the polyunsaturated fatty acids in your brain — omega-3s are truly brain food.",
+    nutrition: { calories: 208, protein: "20g", carbs: "0g", fat: "13g", fiber: "0g" },
+    date: "Feb 8, 2026",
+    readTime: 7,
+    author: { name: "Dr. Sarah Mitchell", role: "Nutritionist" },
+    imageIdx: 3,
+  },
+  {
+    id: "7",
+    slug: "anti-inflammatory-foods",
+    title: "Top 12 Anti-Inflammatory Foods to Add to Your Diet",
+    category: "Nutrition Facts",
+    excerpt:
+      "Chronic inflammation is linked to nearly every major disease. These powerful foods can help keep it in check naturally.",
+    content: [
+      "Inflammation is the body's natural response to injury and infection — but when it becomes chronic, it can contribute to heart disease, diabetes, cancer, and autoimmune conditions. The good news? Your diet is one of the most powerful tools you have to fight chronic inflammation.",
+      "Berries top the list. Blueberries, strawberries, and raspberries contain anthocyanins — powerful antioxidants that reduce inflammatory markers. Fatty fish like salmon and sardines provide EPA and DHA, which directly counter pro-inflammatory molecules. Turmeric, with its active compound curcumin, has been shown in hundreds of studies to rival some anti-inflammatory drugs.",
+      "Leafy greens like spinach and kale are rich in vitamin K and polyphenols. Extra virgin olive oil contains oleocanthal, a compound with effects similar to ibuprofen. Even dark chocolate (70%+ cacao) provides flavonoids that reduce inflammation and improve vascular function.",
+      "Building an anti-inflammatory plate is simple: fill half with colorful vegetables, add a quality protein source, include healthy fats from olive oil or avocado, and season generously with herbs and spices like ginger, rosemary, and cinnamon.",
+    ],
+    pullQuote:
+      "Your diet is one of the most powerful tools you have to fight chronic inflammation naturally.",
+    date: "Feb 5, 2026",
+    readTime: 6,
+    author: { name: "Dr. Sarah Mitchell", role: "Nutritionist" },
+    imageIdx: 1,
+  },
+  {
+    id: "8",
+    slug: "healthy-breakfast-ideas",
+    title: "7 Healthy Breakfast Ideas That Actually Keep You Full",
+    category: "Recipes",
+    excerpt:
+      "Stop reaching for sugary cereals. These satisfying breakfast options combine protein, fiber, and healthy fats to power your morning.",
+    content: [
+      "Breakfast sets the nutritional tone for your entire day. Yet many common breakfast choices — sugary cereals, pastries, flavored yogurts — spike blood sugar and leave you crashing by mid-morning. The key to a breakfast that truly sustains you is balancing protein, fiber, and healthy fats.",
+      "Overnight oats with chia seeds, almond butter, and berries check every box: complex carbs from oats, omega-3s from chia, protein and fat from almond butter, and antioxidants from berries. They take 5 minutes to prepare the night before and require zero morning effort.",
+      "Savory options work beautifully too. A vegetable frittata made with eggs, spinach, tomatoes, and feta provides 25+ grams of protein. Avocado toast on whole grain bread with a poached egg and everything bagel seasoning is simple, satisfying, and packed with nutrients.",
+      "For the smoothie lovers: blend frozen cauliflower (you won't taste it), banana, protein powder, spinach, and a tablespoon of flax seeds. It's creamy, sweet, and delivers vegetables before 8 AM. The fiber and protein combination keeps hunger at bay for 4-5 hours.",
+    ],
+    pullQuote:
+      "The key to a breakfast that truly sustains you is balancing protein, fiber, and healthy fats in every meal.",
+    date: "Feb 2, 2026",
+    readTime: 5,
+    author: { name: "Chef Marco Rivera", role: "Recipe Developer" },
+    imageIdx: 2,
+  },
+  {
+    id: "9",
+    slug: "hydration-and-performance",
+    title: "How Hydration Affects Your Energy and Focus",
+    category: "Healthy Habits",
+    excerpt:
+      "Even mild dehydration can impair concentration and energy levels. Here's the science behind staying properly hydrated.",
+    content: [
+      "Water is arguably the most important nutrient, yet it's the one most often overlooked. Your body is roughly 60% water, and even a 1-2% decrease in hydration can measurably impair cognitive function, mood, and physical performance.",
+      "Research from the University of Connecticut found that mild dehydration — the kind you might not even notice — caused headaches, fatigue, difficulty concentrating, and increased anxiety in both men and women. These effects occurred at hydration levels that were well within the range of everyday activity.",
+      "The old rule of 'eight glasses a day' is a decent starting point but overly simplistic. Your needs depend on body weight, activity level, climate, and diet. A better guideline: drink half your body weight in ounces (e.g., 160 lbs = 80 oz/day), and adjust upward for exercise and heat.",
+      "Water-rich foods count too. Cucumbers, watermelon, oranges, and soups all contribute to your daily fluid intake. Herbal teas are another excellent option. The best hydration indicator? Your urine — aim for pale straw color throughout the day.",
+    ],
+    pullQuote:
+      "Even a 1-2% decrease in hydration can measurably impair your cognitive function, mood, and physical performance.",
+    date: "Jan 28, 2026",
+    readTime: 5,
+    author: { name: "Dr. Sarah Mitchell", role: "Nutritionist" },
+    imageIdx: 0,
+  },
+  {
+    id: "10",
+    slug: "superfoods-myth-or-reality",
+    title: "Superfoods: Marketing Myth or Nutritional Reality?",
+    category: "Nutrition Facts",
+    excerpt:
+      "The term 'superfood' is everywhere, but is there real science behind it? We break down the truth about these hyped-up ingredients.",
+    content: [
+      "Walk through any grocery store and you'll see the label everywhere: superfood. Acai bowls, spirulina powder, goji berries, matcha — these foods have been elevated to almost mythical status. But the term 'superfood' has no official scientific or regulatory definition. It's primarily a marketing tool.",
+      "That said, the foods commonly labeled as superfoods do tend to be genuinely nutritious. Blueberries are rich in anthocyanins and vitamin C. Quinoa provides all nine essential amino acids. Kale delivers impressive amounts of vitamins K, A, and C per calorie. The issue isn't that these foods aren't healthy — it's that the label implies they're uniquely powerful.",
+      "The danger of superfood thinking is that it can overshadow the bigger picture. No single food can compensate for an otherwise poor diet. A handful of goji berries won't undo a week of processed meals. Nutrition is about patterns, not magic bullets.",
+      "The real 'superfoods' are the boring ones: beans, oats, broccoli, eggs, sweet potatoes, sardines. They're affordable, widely available, and backed by decades of research. Focus on building a diverse diet from whole foods rather than chasing the latest superfood trend.",
+    ],
+    pullQuote:
+      "No single food can compensate for an otherwise poor diet — nutrition is about patterns, not magic bullets.",
+    date: "Jan 22, 2026",
+    readTime: 6,
+    author: { name: "Dr. Sarah Mitchell", role: "Nutritionist" },
+    imageIdx: 1,
+  },
 ];
 
 export const categories = ["All", "Recipes", "Nutrition Facts", "Healthy Habits"];
