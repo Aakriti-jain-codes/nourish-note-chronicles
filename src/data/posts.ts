@@ -131,4 +131,4 @@ export const posts: Post[] = [
   },
 ];
 
-export const categories = ["All", "Recipes", "Nutrition Facts", "Healthy Habits", "Weight Management"];
+export const categories = ["All", "Recipes", "Nutrition Facts", "Healthy Habits"];
